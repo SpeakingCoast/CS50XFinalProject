@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbeksje1jhcu8"]
+
+[ext_resource type="Script" path="res://dog_or_cat.gd" id="1_t44ts"]
+[ext_resource type="Texture2D" uid="uid://d2pjydjiqkb2a" path="res://Dog_or_Cat.jpg" id="2_ape8c"]
+[ext_resource type="FontFile" uid="uid://c83dnbyv2pbsg" path="res://poco/Poco.ttf" id="3_ac42e"]
+[ext_resource type="AudioStream" uid="uid://bbjm6loxo2e6g" path="res://relax-chill-out-music-for-landscapes-under-water-animals-forests-8105.mp3" id="4_vahkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0prm"]
+size = Vector2(449.953, 130.938)
+
+[node name="Dog_or_Cat" type="Node2D"]
+script = ExtResource("1_t44ts")
+
+[node name="Dog_Or_CatBackground" type="Sprite2D" parent="."]
+position = Vector2(1282, 724)
+scale = Vector2(1.06375, 1.06667)
+texture = ExtResource("2_ape8c")
+
+[node name="Welcoming_Question" type="RichTextLabel" parent="Dog_Or_CatBackground"]
+offset_left = -629.377
+offset_top = -555.938
+offset_right = 988.623
+offset_bottom = -223.938
+theme_override_colors/default_color = Color(0.701961, 0.203922, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0.6, 0.560784, 1)
+theme_override_fonts/normal_font = ExtResource("3_ac42e")
+theme_override_font_sizes/normal_font_size = 80
+text = "Which pet would you like to feed?"
+
+[node name="Dog_Button" type="Button" parent="Dog_Or_CatBackground"]
+offset_left = -649.589
+offset_top = 281.25
+offset_right = -200.589
+offset_bottom = 417.25
+rotation = 6.28319
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_ac42e")
+theme_override_font_sizes/font_size = 70
+text = "Dog?"
+
+[node name="Cat_Button" type="Button" parent="Dog_Or_CatBackground"]
+offset_left = 293.302
+offset_top = 284.063
+offset_right = 742.302
+offset_bottom = 420.063
+rotation = 6.28319
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_ac42e")
+theme_override_font_sizes/font_size = 70
+text = "Cat?"
+
+[node name="Or_Question" type="RichTextLabel" parent="Dog_Or_CatBackground"]
+offset_left = -0.940287
+offset_top = 285.938
+offset_right = 81.0597
+offset_bottom = 393.938
+theme_override_colors/default_color = Color(0.701961, 0.203922, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0.6, 0.560784, 1)
+theme_override_fonts/normal_font = ExtResource("3_ac42e")
+theme_override_font_sizes/normal_font_size = 80
+text = "OR"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 13)
+stream = ExtResource("4_vahkp")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="DogCollision" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(830, 1097)
+scale = Vector2(1.06375, 1.06667)
+shape = SubResource("RectangleShape2D_u0prm")
+
+[node name="CatCollision" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(1831, 1099)
+scale = Vector2(1.06375, 1.06667)
+shape = SubResource("RectangleShape2D_u0prm")
