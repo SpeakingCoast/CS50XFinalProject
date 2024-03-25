@@ -1,49 +1,51 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvaybltioa27d"]
+[gd_scene load_steps=5 format=3 uid="uid://ddo3kap80pj68"]
 
-[ext_resource type="Texture2D" uid="uid://dv0y6qimo8tpc" path="res://Cute Dinosaur Zoom Virtual Background.jpg" id="1_g7g0q"]
-[ext_resource type="Script" path="res://main.gd" id="1_oeyx7"]
-[ext_resource type="FontFile" uid="uid://c83dnbyv2pbsg" path="res://poco/Poco.ttf" id="3_l84ca"]
-[ext_resource type="AudioStream" uid="uid://g1ho2bmdbvbx" path="res://mousey-mcmousekewitz-177079.mp3" id="4_tblvc"]
+[ext_resource type="Script" path="res://Main.gd" id="1_ptrbr"]
+[ext_resource type="Texture2D" uid="uid://dv0y6qimo8tpc" path="res://Cute Dinosaur Zoom Virtual Background.jpg" id="2_ydss8"]
+[ext_resource type="FontFile" uid="uid://c83dnbyv2pbsg" path="res://poco/Poco.ttf" id="3_ocbpg"]
+[ext_resource type="AudioStream" uid="uid://g1ho2bmdbvbx" path="res://mousey-mcmousekewitz-177079.mp3" id="4_tgbet"]
 
-[node name="MainMenu" type="Node2D"]
-script = ExtResource("1_oeyx7")
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ptrbr")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1282.5, 721)
-scale = Vector2(1.1442, 1.13968)
-texture = ExtResource("1_g7g0q")
+position = Vector2(1280, 723)
+scale = Vector2(1.14018, 1.14127)
+texture = ExtResource("2_ydss8")
 
-[node name="Welcoming_Message" type="RichTextLabel" parent="Background"]
-offset_left = -779.149
-offset_top = -384.318
-offset_right = 838.851
-offset_bottom = -52.3176
-theme_override_colors/default_color = Color(0.168627, 0.564706, 0.466667, 1)
-theme_override_colors/font_shadow_color = Color(0.133333, 0.784314, 0.45098, 1)
-theme_override_fonts/normal_font = ExtResource("3_l84ca")
+[node name="Welcoming_Text" type="RichTextLabel" parent="Background"]
+offset_left = -738.481
+offset_top = -387.288
+offset_right = 879.519
+offset_bottom = -55.2879
+theme_override_colors/default_color = Color(0.701961, 0.203922, 0.870588, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0.6, 0.560784, 1)
+theme_override_fonts/normal_font = ExtResource("3_ocbpg")
 theme_override_font_sizes/normal_font_size = 80
-text = "Welcome to the Animal Pet Feeding Game! 
-Click the button below to start exploring"
+text = "Welcome to the Pet Feeding Game! 
+Click the button below to start exploring."
 
 [node name="Start_Button" type="Button" parent="Background"]
-offset_left = -266.126
-offset_top = -97.3956
-offset_right = 182.874
-offset_bottom = 38.6044
+offset_left = -254.346
+offset_top = -134.061
+offset_right = 194.654
+offset_bottom = 1.93875
 rotation = 6.28319
 size_flags_stretch_ratio = 0.0
-theme_override_fonts/font = ExtResource("3_l84ca")
+theme_override_fonts/font = ExtResource("3_ocbpg")
 theme_override_font_sizes/font_size = 70
-text = "START GAME"
+text = "Start Game"
 
 [node name="Exit_Button" type="Button" parent="Background"]
-offset_left = -266.126
-offset_top = 53.5237
-offset_right = 182.874
-offset_bottom = 189.524
-theme_override_fonts/font = ExtResource("3_l84ca")
+offset_left = -256.1
+offset_top = 25.4103
+offset_right = 192.9
+offset_bottom = 161.41
+rotation = 6.28319
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_ocbpg")
 theme_override_font_sizes/font_size = 70
-text = "EXIT GAME"
+text = "Exit Game"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_tblvc")
+stream = ExtResource("4_tgbet")
